@@ -11,6 +11,7 @@
     "prettier/prettier": 1,
     "import/order": 1,
     "lines-between-class-members": "warn",
+    "import/newline-after-import": "warn",
     "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
