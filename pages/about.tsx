@@ -6,8 +6,12 @@ import Button from '@material-ui/core/Button';
 import ProTip from '../src/ProTip';
 import Link from '../src/Link';
 import Copyright from '../src/Copyright';
+import { useGitHubStars } from '../src/querys';
+import { Example } from './index';
 
 export default function About() {
+  const { isLoading, error, data, isFetching } = useGitHubStars();
+
   return (
     <Container maxWidth="sm">
       <Box sx={{ my: 4 }}>
@@ -17,6 +21,8 @@ export default function About() {
         <Button variant="contained" component={Link} noLinkStyle href="/">
           Go to the main page
         </Button>
+        {isLoading ?? <div>LOADING</div>}
+        <Example />
         <ProTip />
         <Copyright />
       </Box>
